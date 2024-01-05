@@ -44,6 +44,8 @@ public class CourierInfoTest extends AbstractTest {
         entity.setPhoneNumber("+1 234 567 890");
         entity.setDeliveryType("Standard");
         // when
+        //у Вас тут будет ConstraintViolationException
+        //надо entity.setCourierId как MAX(courier_id)+1
         Session session = getSession();
         session.beginTransaction();
         session.persist(entity);
